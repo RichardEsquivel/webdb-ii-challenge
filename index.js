@@ -9,6 +9,6 @@ server.use(express.json());
 
 server.use('/vehs', vehsRouter);
 
-//declare value of port
-const port = 4000;
-server.listen(port, () => console.log("Server running on 4000"));
+//declare value of port unless it is set up by the environment such as Herokuy
+const port = process.env.PORT || 4000;
+server.listen(port, () => console.log(`Argghh mateys server running off port ${port}!!!`));
